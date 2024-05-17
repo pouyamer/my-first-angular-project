@@ -1,0 +1,37 @@
+<form [formGroup]="contactForm">
+    <label for="firstname">First Name </label>
+    <input [ngStyle]="setNgStyleBasedOnStatus('firstname')" type="text" id="firstname" formControlName="firstname" />
+    <br />
+    <label for="lastname">Last Name </label>
+    <input [ngStyle]="setNgStyleBasedOnStatus('lastname')"
+        [disabled]="contactForm.get('firstname')?.status === 'INVALID'" type="text" id="lastname"
+        formControlName="lastname" />
+    <br />
+    <label for="email">Email </label>
+    <input [ngStyle]="setNgStyleBasedOnStatus('email')" type="email" name="email" id="email" formControlName="email" />
+    <br />
+    <label for="phone">Phone </label>
+    <input [ngStyle]="setNgStyleBasedOnStatus('phone')" type="text" name="phone" id="phone" formControlName="phone" />
+    <br />
+    <label for="message">Message </label>
+    <input [ngStyle]="setNgStyleBasedOnStatus('message')" type="text" name="message" id="message"
+        formControlName="message" />
+    <br />
+    <form>
+        <label for="street" formControlName="street">Street </label>
+        <input type="text" name="street" id="street" />
+        <br />
+        <label for="city">City </label>
+        <input type="text" name="city" id="city" formControlName="city" />
+        <br />
+        <label for="state">State </label>
+        <input type="text" name="state" id="state" formControlName="state" />
+        <br />
+        <label for="zip">Zip </label>
+        <input type="text" name="zip" id="zip" formControlName="zip" />
+        <br />
+
+    </form>
+</form>
+
+<p name="console" id="console" [innerHTML]="text"></p>
